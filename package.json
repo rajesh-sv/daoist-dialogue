@@ -1,0 +1,26 @@
+{
+  "name": "daoist-dialogue",
+  "version": "1.0.0",
+  "description": "Welcome to **Daoist Dialogue**, a chat application inspired by the timeless tales of Xianxia. This app is designed to provide daoists with a seamless and engaging dao discussion. Built using modern web technologies, it leverages Node.js, React, Express, MongoDB, and Socket.io to deliver real-time communication.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon backend/server.js",
+    "start": "node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.1",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
