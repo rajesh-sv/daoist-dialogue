@@ -1,4 +1,5 @@
 import { useToast } from "@/components/ui/use-toast";
+import { useSocketContext } from "@/contexts/SocketContext";
 import { UserType } from "@/types";
 import { useEffect, useState } from "react";
 
@@ -6,6 +7,8 @@ export default function useGetUsers(): { loading: boolean; users: UserType[] } {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState<UserType[]>([]);
   const { toast } = useToast();
+  // @ts-ignore
+  const { onlineUsers } = useSocketContext();
 
   useEffect(() => {
     const getUsers = async () => {
@@ -32,7 +35,7 @@ export default function useGetUsers(): { loading: boolean; users: UserType[] } {
     };
 
     getUsers();
-  }, [setUsers]);
+  }, [setUsers, onlineUsers]);
 
   return { loading, users };
 }
