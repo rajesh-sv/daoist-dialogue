@@ -25,7 +25,7 @@ export const SocketContextProvider = ({
 
   useEffect(() => {
     if (authUser) {
-      const newSocket = io("http://localhost:3000", {
+      const newSocket = io("https://daoist-dialogue.rajesh-sv.dev", {
         query: { userId: authUser._id },
       });
 
