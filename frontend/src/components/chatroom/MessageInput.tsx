@@ -17,6 +17,12 @@ export default function MessageInput({ className }: { className: string }) {
         className="resize-none"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            addMessage({ message });
+            setMessage("");
+          }
+        }}
       />
       <Button
         type="submit"
